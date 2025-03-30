@@ -1,11 +1,13 @@
+#Import libraries
 from bs4 import BeautifulSoup
 import requests
 import datetime
 from prettytable import PrettyTable
 
-# input the url from Amazon.in
+# Get the Amazon.in product url from the user
 url = input("Enter Amazon.in product URL:")
 
+#Headers to avoid bot detection
 headers = {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.108 Safari/537.36", "Accept-Encoding":"gzip, deflate", "Accept":"text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8", "DNT":"1","Connection":"close", "Upgrade-Insecure-Requests":"1"}
 response = requests.get(url, headers=headers)
 current_time = datetime.datetime.now()
@@ -16,10 +18,11 @@ soup = BeautifulSoup(response.text, 'html.parser')
 # Create a PrettyTable instance
 table = PrettyTable()
 
-# Define the field names based on the results you are displaying
+# Define the field names for the table header
 table.field_names = ["Product Details", "Value"]
 
-# Get product title
+#Scrapping the product details
+# Get product title/name
 try:
     title = soup.find('span', id='productTitle')
     title = title.get_text(strip=True)
@@ -58,7 +61,6 @@ def get_product_description():
                 return description
             except:
                 return "NA"
-
 description = get_product_description()
 
 # Add rows to the table
