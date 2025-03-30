@@ -13,7 +13,7 @@ To run this project, you'll need to install the following libraries:
 ## Getting Started:
 1. Clone the repository.
 2. Run the Python program: `web_scraper.py`.
-3. Input the Amazon.in product URL and press Enter.
+3. Input the Amazon.in product URL and press Enter. The program may not work for other Amazon websites like amazon.com. 
 4. The program will extract the product information.
 
 ## Limitations:
