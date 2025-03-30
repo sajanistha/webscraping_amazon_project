@@ -19,4 +19,3 @@ To run this project, you need to install the following Python libraries:
 1. This project is intended for educational purposes only. Please ensure you comply with Amazon's terms and conditions when using this script.
 2. Amazon may block your IP if scraping is performed too frequently. Use the script responsibly to avoid potential issues.
 3. The program may need adjustments if Amazon changes the structure of its website. The scraping logic depends on the current HTML structure, which could change over time.
-
